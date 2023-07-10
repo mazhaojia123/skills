@@ -1,0 +1,3 @@
+"ID","Process ID","Process Name","Host Name","Kernel Name","Kernel Time","Context","Stream","Section Name","Metric Name","Metric Unit","Metric Value"
+"0","132230","hello.out","127.0.0.1","_Z14hello_from_gpuv","2022-Dec-10 11:28:47","1","7","Command line profiler metrics","gpu__time_active.avg","nsecond","79,776"
+"0","132230","hello.out","127.0.0.1","_Z14hello_from_gpuv","2022-Dec-10 11:28:47","1","7","Command line profiler metrics","smsp__cycles_active.avg.pct_of_peak_sustained_elapsed","%","0.81"
