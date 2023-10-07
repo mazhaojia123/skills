@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 int main() {
@@ -20,5 +21,6 @@ int main() {
 	for (int i = len; i < s3.length(); i++) {
 		res += s3[i];
 	}
+	pow	
 	cout << res;
 }
