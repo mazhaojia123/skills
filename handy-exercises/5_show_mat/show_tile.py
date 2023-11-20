@@ -2,6 +2,12 @@ import matplotlib.pyplot as plt
 import numpy as np
 X=np.zeros((4096*4096,1))
 
+# cmap = plt.cm.Reds
+vals = np.linspace(0,1,256)
+np.random.shuffle(vals)
+cmap = plt.cm.colors.ListedColormap(plt.cm.Reds(vals))
+# cmap = plt.cm.colors.ListedColormap(plt.cm.jet(vals))
+
 # NOTE: 1. 在循环最深处为矩阵赋值
 cnt = 1
 for i_outer_outer_outer_outer in range(0, 64):
@@ -21,12 +27,13 @@ for i_outer_outer_outer_outer in range(0, 64):
     bound = 64 
     id = 3
     msg = 'i_outer_outer_outer_outer'
-    title = ''
+    title = 'show_tile_tmp'
     # 不要修改下面内容
     if cnt > bound:
         break
     elif cnt == bound:
-        plt.matshow(X.reshape(4096,4096), cmap=plt.cm.Reds)
-        plt.title("show tile : %s"%(msg))
-        plt.savefig('%s_show_tile_%d_%s.png'%(title, id, msg), format='png', dpi=2048)
+        # plt.matshow(X.reshape(4096,4096), cmap=plt.cm.Reds)
+        plt.matshow(X.reshape(4096,4096), cmap=cmap)
+        plt.title("%s : %s"%(title, msg))
+        plt.savefig('%s_%d_%s.png'%(title, id, msg), format='png', dpi=2048)
     cnt+=1
