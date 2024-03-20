@@ -1,7 +1,8 @@
 lc-exercises/output/
 .vscode/
-*/.vscode/
+**/.vscode/
 py-exercises/1_bert_from_scratch/data
 py-exercises/2_pytorch_custom_op/build
 **/build/
 **/*.ncu-rep
+
