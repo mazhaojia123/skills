@@ -1,0 +1,1 @@
+extern int cpu_index;

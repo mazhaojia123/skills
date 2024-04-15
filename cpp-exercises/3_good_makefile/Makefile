@@ -30,6 +30,7 @@ $(EXEC): $(EXECOBJS) $(ALIB)
 $(ALIB): $(OBJS)
 	$(AR) $(ARFLAGS) $@ $^
 
+# 也只有这个时候适合用%
 # 将所有的源文件编译成.o，不论是 EXECOBJ 还是 OBJ
 # $(OBJDIR)%.o: $(SRCDIR)%.cpp $(DEPS)
 $(OBJDIR)%.o: $(SRCDIR)%.cpp
