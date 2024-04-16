@@ -1,0 +1,8 @@
+
+Parsing: /home/mazhaojia/src/skills/hpc-exercises/16_shfl_dwon_reduce/cuda_shfl/main.cu
+Analyzing: /home/mazhaojia/src/skills/hpc-exercises/16_shfl_dwon_reduce/cuda_shfl/main.cu
+Migrating: /home/mazhaojia/src/skills/hpc-exercises/16_shfl_dwon_reduce/cuda_shfl/main.cu
+Processed 1 file(s) in -in-root folder "/home/mazhaojia/src/skills/hpc-exercises/16_shfl_dwon_reduce/cuda_shfl"
+
+See Diagnostics Reference to resolve warnings and complete the migration:
+https://www.intel.com/content/www/us/en/docs/dpcpp-compatibility-tool/developer-guide-reference/current/diagnostics-reference.html
