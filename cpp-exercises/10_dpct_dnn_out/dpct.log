@@ -1,0 +1,28 @@
+/home/mazhaojia/src/skills/cpp-exercises/9_simple_cudnn/example.cu:14:5: warning: DPCT1093:0: The "0" device may be not the one intended for use. Adjust the selected device if needed.
+   14 |     cudaSetDevice(0); // use GPU0
+      |     ^
+/home/mazhaojia/src/skills/cpp-exercises/9_simple_cudnn/example.cu:31:5: warning: DPCT1026:1: The call to cudnnCreateTensorDescriptor was removed because this functionality is redundant in SYCL.
+   31 |     cudnnCreateTensorDescriptor(&x_desc);
+      |     ^
+/home/mazhaojia/src/skills/cpp-exercises/9_simple_cudnn/example.cu:47:5: warning: DPCT1026:2: The call to cudnnCreateActivationDescriptor was removed because this functionality is redundant in SYCL.
+   47 |     cudnnCreateActivationDescriptor(&sigmoid_activation);
+      |     ^
+/home/mazhaojia/src/skills/cpp-exercises/9_simple_cudnn/example.cu:48:5: warning: DPCT1007:3: Migration of Nan numbers propagation option is not supported.
+   48 |     cudnnSetActivationDescriptor(sigmoid_activation, mode, prop, 0.0f);
+      |     ^
+/home/mazhaojia/src/skills/cpp-exercises/9_simple_cudnn/example.cu:61:5: warning: DPCT1026:4: The call to cudnnDestroy was removed because this functionality is redundant in SYCL.
+   61 |     cudnnDestroy(handle_);
+      |     ^
+/home/mazhaojia/src/skills/cpp-exercises/9_simple_cudnn/example.cu:19:43: warning: DPCT1005:5: The SYCL device version is different from CUDA Compute Compatibility. You may need to rewrite this code.
+   19 |     std::cout << "Compute capability:" << devProp.major << "." << devProp.minor << std::endl;
+      |                                           ^
+/home/mazhaojia/src/skills/cpp-exercises/9_simple_cudnn/example.cu:46:5: warning: DPCT1082:6: Migration of cudnnNanPropagation_t type is not supported.
+   46 |     cudnnNanPropagation_t prop = CUDNN_NOT_PROPAGATE_NAN;
+      |     ^
+/home/mazhaojia/src/skills/cpp-exercises/9_simple_cudnn/example.cu:46:34: warning: DPCT1007:7: Migration of CUDNN_NOT_PROPAGATE_NAN is not supported.
+   46 |     cudnnNanPropagation_t prop = CUDNN_NOT_PROPAGATE_NAN;
+      |                                  ^
+Processed 1 file(s) in -in-root folder "/home/mazhaojia/src/skills/cpp-exercises/9_simple_cudnn"
+
+See Diagnostics Reference to resolve warnings and complete the migration:
+https://www.intel.com/content/www/us/en/docs/dpcpp-compatibility-tool/developer-guide-reference/current/diagnostics-reference.html

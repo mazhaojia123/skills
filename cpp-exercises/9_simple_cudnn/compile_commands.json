@@ -1,0 +1,7 @@
+[
+    {
+        "command": "nvcc -c  -o example -D__CUDACC__=1 example.cu",
+        "directory": "/home/mazhaojia/src/skills/cpp-exercises/9_simple_cudnn",
+        "file": "/home/mazhaojia/src/skills/cpp-exercises/9_simple_cudnn/example.cu"
+    }
+]

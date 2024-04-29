@@ -1,0 +1,361 @@
+---
+MainSourceFile:  '/home/mazhaojia/src/skills/cpp-exercises/MainSrcFiles_placehold'
+Replacements:
+  - FilePath:        '/home/mazhaojia/src/skills/cpp-exercises/9_simple_cudnn/example.cu'
+    Offset:          0
+    Length:          0
+    ReplacementText: "#include <dpct/dnnl_utils.hpp>\n#include <sycl/sycl.hpp>\n#include <dpct/dpct.hpp>\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/mazhaojia/src/skills/cpp-exercises/9_simple_cudnn/example.cu'
+    Offset:          20
+    Length:          26
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/mazhaojia/src/skills/cpp-exercises/9_simple_cudnn/example.cu'
+    Offset:          46
+    Length:          19
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/mazhaojia/src/skills/cpp-exercises/9_simple_cudnn/example.cu'
+    Offset:          210
+    Length:          28
+    ReplacementText: 'numGPUs = dpct::dev_mgr::instance().device_count()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/mazhaojia/src/skills/cpp-exercises/9_simple_cudnn/example.cu'
+    Offset:          303
+    Length:          0
+    ReplacementText: "    /*\n    DPCT1093:0: The \"0\" device may be not the one intended for use. Adjust the selected device if needed.\n    */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/mazhaojia/src/skills/cpp-exercises/9_simple_cudnn/example.cu'
+    Offset:          307
+    Length:          13
+    ReplacementText: 'dpct::select_device'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/mazhaojia/src/skills/cpp-exercises/9_simple_cudnn/example.cu'
+    Offset:          358
+    Length:          21
+    ReplacementText: 'dpct::device_info'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/mazhaojia/src/skills/cpp-exercises/9_simple_cudnn/example.cu'
+    Offset:          393
+    Length:          22
+    ReplacementText: 'device = dpct::dev_mgr::instance().current_device_id()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/mazhaojia/src/skills/cpp-exercises/9_simple_cudnn/example.cu'
+    Offset:          421
+    Length:          41
+    ReplacementText: 'dpct::get_device_info(devProp, dpct::dev_mgr::instance().get_device(device))'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/mazhaojia/src/skills/cpp-exercises/9_simple_cudnn/example.cu'
+    Offset:          464
+    Length:          0
+    ReplacementText: "    /*\n    DPCT1005:5: The SYCL device version is different from CUDA Compute Compatibility. You may need to rewrite this code.\n    */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/mazhaojia/src/skills/cpp-exercises/9_simple_cudnn/example.cu'
+    Offset:          514
+    Length:          5
+    ReplacementText: 'get_major_version()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/mazhaojia/src/skills/cpp-exercises/9_simple_cudnn/example.cu'
+    Offset:          538
+    Length:          5
+    ReplacementText: 'get_minor_version()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/mazhaojia/src/skills/cpp-exercises/9_simple_cudnn/example.cu'
+    Offset:          563
+    Length:          13
+    ReplacementText: 'dpct::dnnl::engine_ext'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/mazhaojia/src/skills/cpp-exercises/9_simple_cudnn/example.cu'
+    Offset:          590
+    Length:          21
+    ReplacementText: 'handle_.create_engine()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/mazhaojia/src/skills/cpp-exercises/9_simple_cudnn/example.cu'
+    Offset:          708
+    Length:          15
+    ReplacementText: 'dpct::library_data_t'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/mazhaojia/src/skills/cpp-exercises/9_simple_cudnn/example.cu'
+    Offset:          732
+    Length:          16
+    ReplacementText: 'dpct::library_data_t::real_float'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/mazhaojia/src/skills/cpp-exercises/9_simple_cudnn/example.cu'
+    Offset:          754
+    Length:          19
+    ReplacementText: 'dpct::dnnl::memory_format_tag'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/mazhaojia/src/skills/cpp-exercises/9_simple_cudnn/example.cu'
+    Offset:          783
+    Length:          17
+    ReplacementText: 'dpct::dnnl::memory_format_tag::nchw'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/mazhaojia/src/skills/cpp-exercises/9_simple_cudnn/example.cu'
+    Offset:          875
+    Length:          23
+    ReplacementText: 'dpct::dnnl::memory_desc_ext'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/mazhaojia/src/skills/cpp-exercises/9_simple_cudnn/example.cu'
+    Offset:          907
+    Length:          42
+    ReplacementText: "    /*\n    DPCT1026:1: The call to cudnnCreateTensorDescriptor was removed because this functionality is redundant in SYCL.\n    */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/mazhaojia/src/skills/cpp-exercises/9_simple_cudnn/example.cu'
+    Offset:          953
+    Length:          61
+    ReplacementText: 'x_desc.set(format, dtype, n, c, h, w)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/mazhaojia/src/skills/cpp-exercises/9_simple_cudnn/example.cu'
+    Offset:          1060
+    Length:          51
+    ReplacementText: 'x = sycl::malloc_shared<float>(NUM_ELEMENTS, dpct::get_in_order_queue())'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/mazhaojia/src/skills/cpp-exercises/9_simple_cudnn/example.cu'
+    Offset:          1370
+    Length:          27
+    ReplacementText: 'dpct::dnnl::activation_desc'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/mazhaojia/src/skills/cpp-exercises/9_simple_cudnn/example.cu'
+    Offset:          1422
+    Length:          21
+    ReplacementText: 'dnnl::algorithm'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/mazhaojia/src/skills/cpp-exercises/9_simple_cudnn/example.cu'
+    Offset:          1451
+    Length:          24
+    ReplacementText: 'dnnl::algorithm::eltwise_logistic_use_dst_for_bwd'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/mazhaojia/src/skills/cpp-exercises/9_simple_cudnn/example.cu'
+    Offset:          1477
+    Length:          0
+    ReplacementText: "    /*\n    DPCT1082:6: Migration of cudnnNanPropagation_t type is not supported.\n    */\n    /*\n    DPCT1007:7: Migration of CUDNN_NOT_PROPAGATE_NAN is not supported.\n    */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/mazhaojia/src/skills/cpp-exercises/9_simple_cudnn/example.cu'
+    Offset:          1535
+    Length:          58
+    ReplacementText: "    /*\n    DPCT1026:2: The call to cudnnCreateActivationDescriptor was removed because this functionality is redundant in SYCL.\n    */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/mazhaojia/src/skills/cpp-exercises/9_simple_cudnn/example.cu'
+    Offset:          1593
+    Length:          0
+    ReplacementText: "    /*\n    DPCT1007:3: Migration of Nan numbers propagation option is not supported.\n    */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/mazhaojia/src/skills/cpp-exercises/9_simple_cudnn/example.cu'
+    Offset:          1597
+    Length:          66
+    ReplacementText: 'sigmoid_activation.set(mode, 0.0f)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/mazhaojia/src/skills/cpp-exercises/9_simple_cudnn/example.cu'
+    Offset:          1670
+    Length:          156
+    ReplacementText: 'handle_.async_activation_forward(sigmoid_activation, *alpha, x_desc, x, *beta, x_desc, x)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/mazhaojia/src/skills/cpp-exercises/9_simple_cudnn/example.cu'
+    Offset:          1829
+    Length:          27
+    ReplacementText: "    /*\n    DPCT1026:4: The call to cudnnDestroy was removed because this functionality is redundant in SYCL.\n    */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/home/mazhaojia/src/skills/cpp-exercises/9_simple_cudnn/example.cu'
+    Offset:          2052
+    Length:          11
+    ReplacementText: 'dpct::dpct_free(x, dpct::get_in_order_queue())'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+MainSourceFilesDigest:
+  - MainSourceFile:  '/home/mazhaojia/src/skills/cpp-exercises/9_simple_cudnn/example.cu'
+    Digest:          ae5b5f11775bb97f631d78abb797c214
+DpctVersion:     19.0.0
+MainHelperFileName: ''
+USMLevel:        ''
+FeatureMap:      {}
+CompileTargets:  {}
+OptionMap:
+  AnalysisScopePath:
+    Value:           '/home/mazhaojia/src/skills/cpp-exercises/9_simple_cudnn'
+    Specified:       false
+  AsyncHandler:
+    Value:           'false'
+    Specified:       false
+  BuildScript:
+    Value:           '0'
+    Specified:       false
+  CodePinEnabled:
+    Value:           'false'
+    Specified:       false
+  CommentsEnabled:
+    Value:           'false'
+    Specified:       false
+  CompilationsDir:
+    Value:           '/home/mazhaojia/src/skills/cpp-exercises/9_simple_cudnn'
+    Specified:       true
+  CtadEnabled:
+    Value:           'false'
+    Specified:       false
+  EnablepProfiling:
+    Value:           'false'
+    Specified:       false
+  ExperimentalFlag:
+    Value:           '0'
+    Specified:       false
+  ExplicitNamespace:
+    Value:           '20'
+    Specified:       false
+  ExtensionDDFlag:
+    Value:           '0'
+    Specified:       false
+  ExtensionDEFlag:
+    Value:           '4294967295'
+    Specified:       false
+  HelperFuncPreferenceFlag:
+    Value:           '0'
+    Specified:       false
+  NDRangeDim:
+    Value:           '3'
+    Specified:       false
+  NoDRYPattern:
+    Value:           'false'
+    Specified:       false
+  OptimizeMigration:
+    Value:           'false'
+    Specified:       false
+  ProcessAll:
+    Value:           'false'
+    Specified:       false
+  RuleFile:
+    Value:           ''
+    Specified:       false
+  SyclNamedLambda:
+    Value:           'false'
+    Specified:       false
+  UsmLevel:
+    Value:           '1'
+    Specified:       false
+...
