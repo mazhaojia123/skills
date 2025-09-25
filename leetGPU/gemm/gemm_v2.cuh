@@ -83,21 +83,21 @@ __global__ void gemm_tc_db(const half* A, const half* B, half* C,
             int gr = r + tileM;
 
             bool valid_raw = gr < M;
-            bool valid_tile = valid_raw && (gc+7 < K);
+            bool valid_tile = valid_raw && (gc + 7 < K);
             if (valid_tile) {
                 cp_async_16B(smem.sa[0] + r * BK + c, A + gr * K + gc);
-            } else if(valid_raw) {
+            } else if (valid_raw) {
                 for (int t0 = 0; t0 < 8; t0++) {
                     int gc1 = gc + t0;
                     int c1 = c + t0;
                     if (c1 >= BK) break;
-                    smem.sa[0][r*BK + c1] = gc1 < K ? A[gr * K + gc1] : static_cast<half>(0.0f);
+                    smem.sa[0][r * BK + c1] = gc1 < K ? A[gr * K + gc1] : static_cast<half>(0.0f);
                 }
             } else {
                 for (int t0 = 0; t0 < 8; t0++) {
                     int c1 = c + t0;
                     if (c1 >= BK) break;
-                    smem.sa[0][r*BK + c1] = static_cast<half>(0.0f);
+                    smem.sa[0][r * BK + c1] = static_cast<half>(0.0f);
                 }
             }
         }
@@ -111,22 +111,22 @@ __global__ void gemm_tc_db(const half* A, const half* B, half* C,
             int gr = r + 0;       // k0 = 0;
 
             bool valid_raw = gr < K;
-            bool valid_tile = valid_raw && (gc+7 < N);
+            bool valid_tile = valid_raw && (gc + 7 < N);
 
             if (valid_tile) {
                 cp_async_16B(smem.sb[0] + r * BN + c, B + gr * N + gc);
-            } else if(valid_raw) {
+            } else if (valid_raw) {
                 for (int t0 = 0; t0 < 8; t0++) {
                     int gc1 = gc + t0;
                     int c1 = c + t0;
                     if (c1 >= BN) break;
-                    smem.sb[0][r*BN + c1] = gc1 < N ? B[gr * N + gc1] : static_cast<half>(0.0f);
+                    smem.sb[0][r * BN + c1] = gc1 < N ? B[gr * N + gc1] : static_cast<half>(0.0f);
                 }
             } else {
                 for (int t0 = 0; t0 < 8; t0++) {
                     int c1 = c + t0;
                     if (c1 >= BN) break;
-                    smem.sb[0][r*BN + c1] = static_cast<half>(0.0f);
+                    smem.sb[0][r * BN + c1] = static_cast<half>(0.0f);
                 }
             }
         }
@@ -154,21 +154,21 @@ __global__ void gemm_tc_db(const half* A, const half* B, half* C,
                 int gr = r + tileM;
 
                 bool valid_raw = gr < M;
-                bool valid_tile = valid_raw && (gc+7 < K);
+                bool valid_tile = valid_raw && (gc + 7 < K);
                 if (valid_tile) {
                     cp_async_16B(smem.sa[writeBuf] + r * BK + c, A + gr * K + gc);
-                } else if(valid_raw) {
+                } else if (valid_raw) {
                     for (int t0 = 0; t0 < 8; t0++) {
                         int gc1 = gc + t0;
                         int c1 = c + t0;
                         if (c1 >= BK) break;
-                        smem.sa[writeBuf][r*BK + c1] = gc1 < K ? A[gr * K + gc1] : static_cast<half>(0.0f);
+                        smem.sa[writeBuf][r * BK + c1] = gc1 < K ? A[gr * K + gc1] : static_cast<half>(0.0f);
                     }
                 } else {
                     for (int t0 = 0; t0 < 8; t0++) {
                         int c1 = c + t0;
                         if (c1 >= BK) break;
-                        smem.sa[writeBuf][r*BK + c1] = static_cast<half>(0.0f);
+                        smem.sa[writeBuf][r * BK + c1] = static_cast<half>(0.0f);
                     }
                 }
             }
@@ -182,22 +182,22 @@ __global__ void gemm_tc_db(const half* A, const half* B, half* C,
                 int gr = r + tileK;       // k0 = 0;
 
                 bool valid_raw = gr < K;
-                bool valid_tile = valid_raw && (gc+7 < N);
+                bool valid_tile = valid_raw && (gc + 7 < N);
 
                 if (valid_tile) {
                     cp_async_16B(smem.sb[writeBuf] + r * BN + c, B + gr * N + gc);
-                } else if(valid_raw) {
+                } else if (valid_raw) {
                     for (int t0 = 0; t0 < 8; t0++) {
                         int gc1 = gc + t0;
                         int c1 = c + t0;
                         if (c1 >= BN) break;
-                        smem.sb[writeBuf][r*BN + c1] = gc1 < N ? B[gr * N + gc1] : static_cast<half>(0.0f);
+                        smem.sb[writeBuf][r * BN + c1] = gc1 < N ? B[gr * N + gc1] : static_cast<half>(0.0f);
                     }
                 } else {
                     for (int t0 = 0; t0 < 8; t0++) {
                         int c1 = c + t0;
                         if (c1 >= BN) break;
-                        smem.sb[writeBuf][r*BN + c1] = static_cast<half>(0.0f);
+                        smem.sb[writeBuf][r * BN + c1] = static_cast<half>(0.0f);
                     }
                 }
             }
@@ -222,16 +222,16 @@ __global__ void gemm_tc_db(const half* A, const half* B, half* C,
         }
     }
 
-    wmma::store_matrix_sync(smem.sc + wr*WM*BN + wc*WN, fragC, BN, wmma::mem_row_major);
+    wmma::store_matrix_sync(smem.sc + wr * WM * BN + wc * WN, fragC, BN, wmma::mem_row_major);
     __syncthreads();
     
-    for (int i = tid; i < BN*BM; i += TPB) {
+    for (int i = tid; i < BN * BM; i += TPB) {
         int c = i % BN; 
         int r = i / BN;
         int gc = c + tileN;
         int gr = r + tileM;
         if (gc < N && gr < M) {
-            float rc = smem.sc[r*BN + c];
+            float rc = smem.sc[r * BN + c];
             float oldC = __half2float(C[gc + gr * N]);
             C[gc + gr * N] = __float2half_rn(alpha * rc + beta * oldC);
         }
@@ -242,9 +242,74 @@ extern "C" void solve(const half* A, const half* B, half* C,
                       int M, int N, int K, float alpha, float beta)
 {
     dim3 grid(CEIL_DIV(M, BM), CEIL_DIV(N, BN));
-    dim3 block(32*16, 1, 1);
-    size_t shmSize = (BM * BK+ BN * BK)* sizeof(half) * 2 + BM*BN*sizeof(float);
+    dim3 block(32 * 16, 1, 1);
+    size_t shmSize = (BM * BK + BN * BK) * sizeof(half) * 2 + BM * BN * sizeof(float);
 
     gemm_tc_db<<<grid, block, shmSize>>>(A, B, C, M, N, K, alpha, beta);
     cudaDeviceSynchronize();
+}
+
+extern "C" float bench(const half* A, const half* B, half* C,
+                      int M, int N, int K, float alpha, float beta)
+{
+    dim3 grid(CEIL_DIV(M, BM), CEIL_DIV(N, BN));
+    dim3 block(32 * 16, 1, 1);
+    size_t shmSize = (BM * BK + BN * BK) * sizeof(half) * 2 + BM * BN * sizeof(float);
+
+    cudaEvent_t start;
+    cudaEvent_t stop;
+    bool start_created = false;
+    bool stop_created = false;
+    float ms = -1.0f;
+
+    cudaError_t err = cudaEventCreate(&start);
+    if (err != cudaSuccess) {
+        return -static_cast<float>(err);
+    }
+    start_created = true;
+
+    err = cudaEventCreate(&stop);
+    if (err != cudaSuccess) {
+        cudaEventDestroy(start);
+        return -static_cast<float>(err);
+    }
+    stop_created = true;
+
+    err = cudaEventRecord(start);
+    if (err != cudaSuccess) {
+        ms = -static_cast<float>(err);
+        return ms;
+    }
+
+    gemm_tc_db<<<grid, block, shmSize>>>(A, B, C, M, N, K, alpha, beta);
+    err = cudaGetLastError();
+    if (err != cudaSuccess) {
+        ms = -static_cast<float>(err);
+        return ms;
+    }
+
+    err = cudaEventRecord(stop);
+    if (err != cudaSuccess) {
+        ms = -static_cast<float>(err);
+        return ms;
+    }
+
+    err = cudaEventSynchronize(stop);
+    if (err != cudaSuccess) {
+        ms = -static_cast<float>(err);
+        return ms;
+    }
+
+    err = cudaEventElapsedTime(&ms, start, stop);
+    if (err != cudaSuccess) {
+        ms = -static_cast<float>(err);
+    }
+
+    if (stop_created) {
+        cudaEventDestroy(stop);
+    }
+    if (start_created) {
+        cudaEventDestroy(start);
+    }
+    return ms;
 }
